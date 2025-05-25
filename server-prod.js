@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Serve static assets
-app.use(express.static(path.join(__dirname, 'dist/client')));
+app.use(express.static(path.join(__dirname, 'dist/public')));
 
 // API routes
 (async () => {
@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'dist/client')));
     if (req.path.startsWith('/api')) {
       return res.status(404).json({ error: "API endpoint not found" });
     }
-    res.sendFile(path.join(__dirname, 'dist/client/index.html'));
+    res.sendFile(path.join(__dirname, 'dist/public/index.html'));
   });
 
   // Use the PORT environment variable provided by Render

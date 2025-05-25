@@ -1,0 +1,58 @@
+2025-05-25T02:09:58.228011666Z ==> Cloning from https://github.com/rbtech24/swankies
+2025-05-25T02:09:58.889441558Z ==> Checking out commit e3ad567eb388d6df903ab89ddd0473cfe3258663 in branch main
+2025-05-25T02:10:01.426256154Z ==> Using Node.js version 20.11.0 via /opt/render/project/src/.node-version
+2025-05-25T02:10:01.473715662Z ==> Docs on specifying a Node.js version: https://render.com/docs/node-version
+2025-05-25T02:10:04.032912886Z ==> Using Bun version 1.1.0 (default)
+2025-05-25T02:10:04.032941077Z ==> Docs on specifying a bun version: https://render.com/docs/bun-version
+2025-05-25T02:10:04.118461912Z ==> Running build command 'npm install; npm run build'...
+2025-05-25T02:10:22.518023627Z 
+2025-05-25T02:10:22.518073578Z added 486 packages, and audited 487 packages in 18s
+2025-05-25T02:10:22.518244309Z 
+2025-05-25T02:10:22.518257579Z 64 packages are looking for funding
+2025-05-25T02:10:22.51829297Z   run `npm fund` for details
+2025-05-25T02:10:22.575373791Z 
+2025-05-25T02:10:22.575403511Z 7 moderate severity vulnerabilities
+2025-05-25T02:10:22.575408901Z 
+2025-05-25T02:10:22.575414741Z To address issues that do not require attention, run:
+2025-05-25T02:10:22.575420101Z   npm audit fix
+2025-05-25T02:10:22.575425021Z 
+2025-05-25T02:10:22.575429981Z To address all issues (including breaking changes), run:
+2025-05-25T02:10:22.575435441Z   npm audit fix --force
+2025-05-25T02:10:22.575440111Z 
+2025-05-25T02:10:22.575445481Z Run `npm audit` for details.
+2025-05-25T02:10:23.063791346Z 
+2025-05-25T02:10:23.063825907Z > rest-express@1.0.0 build
+2025-05-25T02:10:23.063833067Z > vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+2025-05-25T02:10:23.063842617Z 
+2025-05-25T02:10:23.399825671Z vite v5.4.14 building for production...
+2025-05-25T02:10:23.48362233Z transforming...
+2025-05-25T02:10:23.892693849Z Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+2025-05-25T02:10:23.8927237Z   npx update-browserslist-db@latest
+2025-05-25T02:10:23.89272975Z   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+2025-05-25T02:10:34.156990217Z ✓ 2600 modules transformed.
+2025-05-25T02:10:34.872113163Z rendering chunks...
+2025-05-25T02:10:34.890855924Z computing gzip size...
+2025-05-25T02:10:34.928528788Z ../dist/public/index.html                   1.48 kB │ gzip:   0.75 kB
+2025-05-25T02:10:34.928558728Z ../dist/public/assets/index-M1j7I1uZ.css   88.68 kB │ gzip:  14.35 kB
+2025-05-25T02:10:34.928577389Z ../dist/public/assets/index-DoaDoETG.js   880.40 kB │ gzip: 236.31 kB
+2025-05-25T02:10:34.928787391Z 
+2025-05-25T02:10:34.928805561Z (!) Some chunks are larger than 500 kB after minification. Consider:
+2025-05-25T02:10:34.928812841Z - Using dynamic import() to code-split the application
+2025-05-25T02:10:34.928819561Z - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+2025-05-25T02:10:34.928827631Z - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+2025-05-25T02:10:34.929147814Z ✓ built in 11.49s
+2025-05-25T02:10:35.059969868Z 
+2025-05-25T02:10:35.059996428Z   dist/index.js  11.2kb
+2025-05-25T02:10:35.060002098Z 
+2025-05-25T02:10:35.060007288Z ⚡ Done in 7ms
+2025-05-25T02:10:36.464625734Z ==> Uploading build...
+2025-05-25T02:10:49.921799606Z ==> Uploaded in 8.7s. Compression took 4.8s
+2025-05-25T02:10:49.981393102Z ==> Build successful 🎉
+2025-05-25T02:10:51.689444614Z ==> Deploying...
+2025-05-25T02:11:07.035679008Z ==> Running 'npm run start'
+2025-05-25T02:11:07.723076563Z 
+2025-05-25T02:11:07.723106874Z > rest-express@1.0.0 start
+2025-05-25T02:11:07.723113994Z > NODE_ENV=production node dist/index.js
+2025-05-25T02:11:07.723116074Z 
+2025-05-25T02:11:08.725484548Z 2:11:08 AM [express] serving on port 10000
+2025-05-25T02:11:12.850149729Z ==> Your service is live 🎉
