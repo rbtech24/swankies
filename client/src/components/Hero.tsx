@@ -18,34 +18,52 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center pt-20 relative overflow-hidden">
       {/* Background image with parallax effect */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 bg-background hero-parallax"
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70 bg-background hero-parallax"
         style={{
-          backgroundImage: "url('https://pixabay.com/get/g3d5f59e71ae60ad209ef702723382431452d71c3af75a28f28d09bd06ead5effc565442fa25fa76fc7f70113e1391ccabd499304edff6fca4d51c23716174a4d_1280.jpg')",
+          backgroundImage: "url('https://pixabay.com/get/g24e72d3dfe14bdff2a9dc9cbbd09d84e6db3e0bc16b13ba39e3bd01c7beb6f22f40095989ae6fe76cb6f5e5c9cfc8d2b3cccf3d7de96c31b5979b4433cb26a29_1280.jpg')",
         }}>
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-background/20"></div>
       
       <div className="container mx-auto px-4 z-10 py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="font-montserrat font-bold text-5xl md:text-6xl mb-6 leading-tight">
-            <span className="text-primary text-shadow-neon">Premium Mobile</span> Detailing Services
-          </h1>
-          <p className="text-xl md:text-2xl mb-10 opacity-90 max-w-2xl mx-auto">
-            Bringing professional auto, boat, and motorcycle detailing directly to you. Serving Lake Eucha, Lake Hudson, Lake Tenkiller, and Beaver Lake areas.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a 
-              href="#contact" 
-              className="bg-primary text-primary-foreground font-bold py-4 px-8 rounded-full text-lg hover:shadow-neon-lg transition duration-300 transform hover:-translate-y-1"
-            >
-              Book Now
-            </a>
-            <a 
-              href="#services" 
-              className="bg-transparent border-2 border-white hover:border-primary text-white hover:text-primary font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:-translate-y-1"
-            >
-              Our Services
-            </a>
+        <div className="md:flex items-center justify-between">
+          <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+            <h1 className="font-montserrat font-bold text-5xl md:text-6xl mb-6 leading-tight">
+              <span className="text-primary text-shadow-neon">SWANKIES</span><br />
+              <span className="text-white">Elite Detail & Restoration</span>
+            </h1>
+            <p className="text-xl md:text-2xl mb-10 opacity-90 max-w-2xl mx-auto md:mx-0">
+              Premium mobile auto, boat, and motorcycle detailing services. Serving Northeast Oklahoma and Northwest Arkansas.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+              <a 
+                href="#contact" 
+                className="bg-primary text-primary-foreground font-bold py-4 px-8 rounded-full text-lg hover:shadow-neon-lg transition duration-300 transform hover:-translate-y-1"
+              >
+                Book Now
+              </a>
+              <a 
+                href="#services" 
+                className="bg-transparent border-2 border-white hover:border-primary text-white hover:text-primary font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:-translate-y-1"
+              >
+                Our Services
+              </a>
+            </div>
+          </div>
+          <div className="md:w-1/2 relative">
+            <div className="relative rounded-xl overflow-hidden shadow-2xl shadow-primary/30 max-w-lg mx-auto transform hover:scale-[1.02] transition-transform duration-300">
+              <img 
+                src="https://images.unsplash.com/photo-1606073682345-2df4ffa33d58?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                alt="SWANKIES Elite Detail & Restoration - Red Corvette Detail" 
+                className="w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+                <div className="bg-black/50 p-4 backdrop-blur-sm rounded-lg border border-primary/30">
+                  <h3 className="text-primary font-bold text-xl mb-2">Mobile Detail Service</h3>
+                  <p className="text-white text-sm">We bring our expertise and equipment directly to your location</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

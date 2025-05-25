@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <a href="#" className="text-primary text-3xl font-montserrat font-bold text-shadow-neon">
-              Swankies<span className="text-white">Elite</span>
+              SWANKIES<span className="text-white"> Elite Detail & Restoration</span>
             </a>
             <p className="mt-4 text-gray-400">
               Premium mobile detailing services for autos, boats, and motorcycles. We bring the detail shop to you.

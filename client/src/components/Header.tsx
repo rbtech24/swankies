@@ -80,7 +80,7 @@ const Header = () => {
           <div className="flex justify-between items-center mb-8">
             <Link href="/">
               <a className="text-primary text-2xl font-montserrat font-bold text-shadow-neon">
-                Swankies
+                SWANKIES
               </a>
             </Link>
             <button 
