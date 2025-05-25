@@ -15,6 +15,11 @@ import BookingPage from "@/pages/BookingPage";
 import AutoDetailingPage from "@/pages/AutoDetailingPage";
 import BoatDetailingPage from "@/pages/BoatDetailingPage";
 import MotorcycleDetailingPage from "@/pages/MotorcycleDetailingPage";
+
+// Additional Service Pages
+import PaintCorrectionPage from "@/pages/services/PaintCorrectionPage";
+import CeramicCoatingPage from "@/pages/services/CeramicCoatingPage";
+import InteriorDetailingPage from "@/pages/services/InteriorDetailingPage";
 import MobileCallButton from "@/components/MobileCallButton";
 
 // Service Area Pages
@@ -50,6 +55,9 @@ function Router() {
       <Route path="/services/auto-detailing" component={AutoDetailingPage} />
       <Route path="/services/boat-detailing" component={BoatDetailingPage} />
       <Route path="/services/motorcycle-detailing" component={MotorcycleDetailingPage} />
+      <Route path="/services/paint-correction" component={PaintCorrectionPage} />
+      <Route path="/services/ceramic-coating" component={CeramicCoatingPage} />
+      <Route path="/services/interior-detailing" component={InteriorDetailingPage} />
       
       {/* Service Area Routes - Lakes */}
       <Route path="/service-areas/detailing-service-grand-lake" component={GrandLakePage} />
