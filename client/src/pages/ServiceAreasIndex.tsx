@@ -240,13 +240,21 @@ const ServiceAreasIndex = () => {
                       {location.name}
                     </h3>
                     <p className="text-sm text-gray-400 mb-4">{location.county} County</p>
-                    <div className="mb-4">
-                      <h4 className="text-primary font-bold mb-2">Cities Served:</h4>
-                      <p className="text-gray-300">{location.cities.join(', ')}</p>
-                    </div>
                     <div className="mb-6">
-                      <h4 className="text-primary font-bold mb-2">Attractions:</h4>
-                      <p className="text-gray-300">{location.attractions.join(', ')}</p>
+                      <h4 className="text-primary font-bold mb-2">Cities Served:</h4>
+                      <p className="text-gray-300">
+                        {location.cities.map((city, cityIndex) => {
+                          const citySlug = city.toLowerCase().replace(/\s+/g, '-');
+                          return (
+                            <span key={cityIndex}>
+                              <Link href={`/service-areas/${citySlug}-oklahoma`}>
+                                <a className="text-gray-300 hover:text-primary transition-colors">{city}</a>
+                              </Link>
+                              {cityIndex < location.cities.length - 1 ? ', ' : ''}
+                            </span>
+                          );
+                        })}
+                      </p>
                     </div>
                     <Link href={`/service-areas/detailing-service-${location.urlSlug}`}>
                       <a className="inline-block bg-primary text-black font-bold py-2 px-6 rounded-full hover:shadow-neon-sm transition duration-300 transform hover:-translate-y-1">
@@ -293,13 +301,21 @@ const ServiceAreasIndex = () => {
                       {location.name}
                     </h3>
                     <p className="text-sm text-gray-400 mb-4">{location.county} County</p>
-                    <div className="mb-4">
-                      <h4 className="text-primary font-bold mb-2">Cities Served:</h4>
-                      <p className="text-gray-300">{location.cities.join(', ')}</p>
-                    </div>
                     <div className="mb-6">
-                      <h4 className="text-primary font-bold mb-2">Attractions:</h4>
-                      <p className="text-gray-300">{location.attractions.join(', ')}</p>
+                      <h4 className="text-primary font-bold mb-2">Cities Served:</h4>
+                      <p className="text-gray-300">
+                        {location.cities.map((city, cityIndex) => {
+                          const citySlug = city.toLowerCase().replace(/\s+/g, '-');
+                          return (
+                            <span key={cityIndex}>
+                              <Link href={`/service-areas/${citySlug}-arkansas`}>
+                                <a className="text-gray-300 hover:text-primary transition-colors">{city}</a>
+                              </Link>
+                              {cityIndex < location.cities.length - 1 ? ', ' : ''}
+                            </span>
+                          );
+                        })}
+                      </p>
                     </div>
                     <Link href={`/service-areas/detailing-service-${location.urlSlug}`}>
                       <a className="inline-block bg-primary text-black font-bold py-2 px-6 rounded-full hover:shadow-neon-sm transition duration-300 transform hover:-translate-y-1">
