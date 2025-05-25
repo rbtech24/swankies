@@ -28,6 +28,9 @@ import TahlequahDetailingPage from "@/pages/service-areas/cities/TahlequahDetail
 import BentonvilleDetailingPage from "@/pages/service-areas/cities/BentonvilleDetailingPage";
 import RogersDetailingPage from "@/pages/service-areas/cities/RogersDetailingPage";
 import ClaremoreDetailingPage from "@/pages/service-areas/cities/ClaremoreDetailingPage";
+import JayDetailingPage from "@/pages/service-areas/cities/JayDetailingPage";
+import SalinaDetailingPage from "@/pages/service-areas/cities/SalinaDetailingPage";
+import MiamiDetailingPage from "@/pages/service-areas/cities/MiamiDetailingPage";
 
 function Router() {
   return (
@@ -55,6 +58,9 @@ function Router() {
       <Route path="/service-areas/bentonville-arkansas" component={BentonvilleDetailingPage} />
       <Route path="/service-areas/rogers-arkansas" component={RogersDetailingPage} />
       <Route path="/service-areas/claremore-oklahoma" component={ClaremoreDetailingPage} />
+      <Route path="/service-areas/jay-oklahoma" component={JayDetailingPage} />
+      <Route path="/service-areas/salina-oklahoma" component={SalinaDetailingPage} />
+      <Route path="/service-areas/miami-oklahoma" component={MiamiDetailingPage} />
       
       <Route component={NotFound} />
     </Switch>
