@@ -179,14 +179,7 @@ const ServiceAreasIndex = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               {oklahomaLocations.map((location, index) => (
-                <div key={index} className="bg-card/30 rounded-xl overflow-hidden shadow-lg border border-primary/20 hover:border-primary/40 transition-all hover:shadow-neon-sm group">
-                  <div className="h-48 overflow-hidden">
-                    <img 
-                      src={location.imageUrl || "https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&w=640"} 
-                      alt={`${location.name}, ${location.state}`} 
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" 
-                    />
-                  </div>
+                <div key={index} className="bg-card/30 rounded-xl shadow-lg border border-primary/20 hover:border-primary/40 transition-all hover:shadow-neon-sm group">
                   <div className="p-6">
                     <h3 className="font-montserrat font-bold text-2xl mb-2 text-white group-hover:text-primary transition-colors">
                       {location.name}
@@ -234,14 +227,7 @@ const ServiceAreasIndex = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               {arkansasLocations.map((location, index) => (
-                <div key={index} className="bg-card/30 rounded-xl overflow-hidden shadow-lg border border-primary/20 hover:border-primary/40 transition-all hover:shadow-neon-sm group">
-                  <div className="h-48 overflow-hidden">
-                    <img 
-                      src={location.imageUrl || "https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&w=640"} 
-                      alt={`${location.name}, ${location.state}`} 
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" 
-                    />
-                  </div>
+                <div key={index} className="bg-card/30 rounded-xl shadow-lg border border-primary/20 hover:border-primary/40 transition-all hover:shadow-neon-sm group">
                   <div className="p-6">
                     <h3 className="font-montserrat font-bold text-2xl mb-2 text-white group-hover:text-primary transition-colors">
                       {location.name}
