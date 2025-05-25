@@ -15,7 +15,7 @@ const AutoDetailingPage = () => {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://images.pexels.com/photos/3422964/pexels-photo-3422964.jpeg?auto=compress&cs=tinysrgb&w=1280" />
         <meta name="keywords" content="auto detailing, car detailing, mobile detailing, paint correction, ceramic coating, interior detailing, engine detailing, headlight restoration, Oklahoma, Arkansas" />
-        <link rel="canonical" href="https://swankieselitedetail.com/services/auto-detailing" />
+        <link rel="canonical" href="https://swankieselite.com/services/auto-detailing" />
       </Helmet>
       
       <Header />

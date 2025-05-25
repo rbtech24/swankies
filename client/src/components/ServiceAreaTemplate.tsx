@@ -34,7 +34,7 @@ const ServiceAreaTemplate: React.FC<ServiceAreaTemplateProps> = ({
         <meta property="og:type" content="website" />
         <meta property="og:image" content={imageUrl} />
         <meta name="keywords" content={`mobile detailing, boat detailing, auto detailing, car detailing, ceramic coating, paint correction, ${areaName}, ${cities.join(', ')}`} />
-        <link rel="canonical" href={`https://swankieselitedetail.com/service-areas/detailing-service-${formattedAreaName}`} />
+        <link rel="canonical" href={`https://swankieselite.com/service-areas/detailing-service-${formattedAreaName}`} />
       </Helmet>
       
       <Header />

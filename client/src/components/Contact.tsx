@@ -151,7 +151,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-montserrat font-semibold text-lg">Email</h4>
                   <p className="text-gray-400">
-                    <a href="mailto:info@swankieselite.com" className="hover:text-primary transition duration-300">info@swankieselitedetail.com</a>
+                    <a href="mailto:info@swankieselite.com" className="hover:text-primary transition duration-300">info@swankieselite.com</a>
                   </p>
                 </div>
               </div>

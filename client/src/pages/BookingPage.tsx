@@ -14,7 +14,7 @@ const BookingPage = () => {
         <meta property="og:description" content="Schedule your premium mobile detailing service. Choose your preferred date and time for professional detailing at your location." />
         <meta property="og:type" content="website" />
         <meta name="keywords" content="book detailing, schedule detailing, auto detailing appointment, boat detailing booking, motorcycle detailing schedule, Oklahoma detailing, Arkansas detailing" />
-        <link rel="canonical" href="https://swankieselitedetail.com/booking" />
+        <link rel="canonical" href="https://swankieselite.com/booking" />
       </Helmet>
       
       <Header />
@@ -108,7 +108,7 @@ const BookingPage = () => {
                 Call (918) 822-7188
               </a>
               <a 
-                href="mailto:info@swankieselitedetail.com" 
+                href="mailto:info@swankieselite.com" 
                 className="bg-transparent border-2 border-white hover:border-primary text-white hover:text-primary font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:-translate-y-1 inline-block"
               >
                 Email Us

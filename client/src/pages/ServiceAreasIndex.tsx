@@ -137,7 +137,7 @@ const ServiceAreasIndex = () => {
         <meta property="og:description" content="Mobile detailing services across Oklahoma and Arkansas. Professional auto, boat, and motorcycle detailing at your location." />
         <meta property="og:type" content="website" />
         <meta name="keywords" content="mobile detailing, Oklahoma detailing, Arkansas detailing, boat detailing, auto detailing, car detailing, motorcycle detailing, RV detailing" />
-        <link rel="canonical" href="https://swankieselitedetail.com/service-areas" />
+        <link rel="canonical" href="https://swankieselite.com/service-areas" />
       </Helmet>
       
       <Header />
@@ -288,8 +288,8 @@ const ServiceAreasIndex = () => {
                 return (
                   <div key={index} className="bg-card/30 rounded-lg p-3 text-center hover:bg-card/50 transition-colors">
                     {hasDetailPage ? (
-                      <Link href={`/service-areas/${citySlug}-${state}`}>
-                        <a className="text-white hover:text-primary transition-colors">{city}</a>
+                      <Link href={`/service-areas/${citySlug}-${state}`} className="text-white hover:text-primary transition-colors">
+                        {city}
                       </Link>
                     ) : (
                       <span className="text-white">{city}</span>

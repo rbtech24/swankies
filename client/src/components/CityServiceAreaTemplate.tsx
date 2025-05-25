@@ -34,7 +34,7 @@ const CityServiceAreaTemplate: React.FC<CityServiceAreaTemplateProps> = ({
         <meta property="og:description" content={`Professional mobile detailing services in ${cityName}, ${state}. Mobile auto, boat, and motorcycle detailing that comes to your location.`} />
         <meta property="og:type" content="website" />
         <meta name="keywords" content={`${cityName} detailing, mobile detailing ${cityName}, car detailing ${cityName}, boat detailing ${cityName}, motorcycle detailing ${cityName}, ${state} detailing, ${county} County detailing`} />
-        <link rel="canonical" href={`https://swankieselitedetail.com/service-areas/${cityName.toLowerCase().replace(/\s+/g, '-')}`} />
+        <link rel="canonical" href={`https://swankieselite.com/service-areas/${cityName.toLowerCase().replace(/\s+/g, '-')}`} />
       </Helmet>
       
       <Header />
