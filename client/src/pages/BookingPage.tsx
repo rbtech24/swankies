@@ -13,8 +13,40 @@ const BookingPage = () => {
         <meta property="og:title" content="Book Your Detailing Service | SWANKIES Elite Detail & Restoration" />
         <meta property="og:description" content="Schedule your premium mobile detailing service. Choose your preferred date and time for professional detailing at your location." />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://swankieselite.com/booking" />
+        <meta property="og:image" content="https://swankieselite.com/og-booking.jpg" />
         <meta name="keywords" content="book detailing, schedule detailing, auto detailing appointment, boat detailing booking, motorcycle detailing schedule, Oklahoma detailing, Arkansas detailing" />
         <link rel="canonical" href="https://swankieselite.com/booking" />
+        
+        {/* Schema.org structured data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Mobile Detailing Service",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "SWANKIES Elite Detail & Restoration",
+              "telephone": "+19188227188",
+              "email": "info@swankieselite.com",
+              "areaServed": ["Northeast Oklahoma", "Northwest Arkansas"]
+            },
+            "description": "Premium mobile detailing services for auto, boat, and motorcycle.",
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "serviceUrl": "https://swankieselite.com/booking",
+              "servicePhone": "+19188227188",
+              "serviceSmsNumber": "+19188227188"
+            },
+            "termsOfService": "24-hour cancellation policy applies. Weather-related rescheduling at no charge.",
+            "hoursAvailable": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              "opens": "08:00",
+              "closes": "18:00"
+            }
+          })}
+        </script>
       </Helmet>
       
       <Header />
