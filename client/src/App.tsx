@@ -20,6 +20,12 @@ import MotorcycleDetailingPage from "@/pages/MotorcycleDetailingPage";
 import PaintCorrectionPage from "@/pages/services/PaintCorrectionPage";
 import CeramicCoatingPage from "@/pages/services/CeramicCoatingPage";
 import InteriorDetailingPage from "@/pages/services/InteriorDetailingPage";
+
+// Legal Pages
+import TermsOfUsePage from "@/pages/TermsOfUsePage";
+import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
+import CookiePolicyPage from "@/pages/CookiePolicyPage";
+import SitemapPage from "@/pages/SitemapPage";
 import MobileCallButton from "@/components/MobileCallButton";
 
 // Service Area Pages
@@ -58,6 +64,12 @@ function Router() {
       <Route path="/services/paint-correction" component={PaintCorrectionPage} />
       <Route path="/services/ceramic-coating" component={CeramicCoatingPage} />
       <Route path="/services/interior-detailing" component={InteriorDetailingPage} />
+      
+      {/* Legal Pages */}
+      <Route path="/terms-of-use" component={TermsOfUsePage} />
+      <Route path="/privacy-policy" component={PrivacyPolicyPage} />
+      <Route path="/cookie-policy" component={CookiePolicyPage} />
+      <Route path="/sitemap" component={SitemapPage} />
       
       {/* Service Area Routes - Lakes */}
       <Route path="/service-areas/detailing-service-grand-lake" component={GrandLakePage} />

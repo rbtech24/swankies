@@ -89,20 +89,41 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {currentYear} Swankies Elite Detailing. All rights reserved.
-          </p>
-          <div className="flex space-x-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition duration-300">
-              <i className="fab fa-facebook-f"></i>
+        <div className="border-t border-gray-800 mt-12 pt-8">
+          {/* Legal Links */}
+          <div className="flex flex-wrap justify-center mb-6 gap-x-6 gap-y-2">
+            <a href="/terms-of-use" onClick={() => window.scrollTo(0, 0)} className="text-gray-400 hover:text-primary transition duration-300 text-sm">
+              Terms of Use
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition duration-300">
-              <i className="fab fa-instagram"></i>
+            <a href="/privacy-policy" onClick={() => window.scrollTo(0, 0)} className="text-gray-400 hover:text-primary transition duration-300 text-sm">
+              Privacy Policy
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition duration-300">
-              <i className="fab fa-twitter"></i>
+            <a href="/cookie-policy" onClick={() => window.scrollTo(0, 0)} className="text-gray-400 hover:text-primary transition duration-300 text-sm">
+              Cookie Policy
             </a>
+            <a href="/sitemap" onClick={() => window.scrollTo(0, 0)} className="text-gray-400 hover:text-primary transition duration-300 text-sm">
+              Sitemap
+            </a>
+            <a href="/sitemap.xml" className="text-gray-400 hover:text-primary transition duration-300 text-sm">
+              XML Sitemap
+            </a>
+          </div>
+          
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm mb-4 md:mb-0">
+              &copy; {currentYear} Swankies Elite Detailing. All rights reserved.
+            </p>
+            <div className="flex space-x-4">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition duration-300">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition duration-300">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition duration-300">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
