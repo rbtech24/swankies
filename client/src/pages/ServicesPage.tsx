@@ -2,10 +2,81 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Services from "@/components/Services";
 import { Link } from "wouter";
+import { Helmet } from "react-helmet";
 
 const ServicesPage = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Premium Detailing Services | Auto, Boat & Motorcycle | SWANKIES Elite</title>
+        <meta name="description" content="Comprehensive auto, boat, and motorcycle detailing services including ceramic coating, paint correction, and interior detailing. Mobile service available in Oklahoma and Arkansas." />
+        <meta name="keywords" content="auto detailing, boat detailing, motorcycle detailing, ceramic coating, paint correction, interior detailing, mobile detailing, Oklahoma, Arkansas" />
+        <link rel="canonical" href="https://swankieselite.com/services" />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Premium Detailing Services | SWANKIES Elite Detail & Restoration" />
+        <meta property="og:description" content="Professional detailing services for auto, boat, and motorcycle with ceramic coating and paint correction. Mobile service available." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://swankieselite.com/services" />
+        <meta property="og:image" content="https://swankieselite.com/og-services.jpg" />
+        
+        {/* Schema.org structured data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Vehicle Detailing Services",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "SWANKIES Elite Detail & Restoration",
+              "telephone": "+19188227188",
+              "areaServed": ["Northeast Oklahoma", "Northwest Arkansas"]
+            },
+            "description": "Professional detailing services for automobiles, boats, and motorcycles including ceramic coating, paint correction, and interior detailing.",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Detailing Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Auto Detailing"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Boat Detailing"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Motorcycle Detailing"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Ceramic Coating"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Paint Correction"
+                  }
+                }
+              ]
+            }
+          })}
+        </script>
+      </Helmet>
       <Header />
       
       <main className="pt-20">

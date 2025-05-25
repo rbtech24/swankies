@@ -16,6 +16,10 @@ interface Location {
 }
 
 const ServiceAreasIndex = () => {
+  // SEO metadata
+  const title = "Service Areas | SWANKIES Elite Detail & Restoration | OK & AR";
+  const description = "SWANKIES Elite Detail & Restoration provides premium mobile detailing services across Northeast Oklahoma and Northwest Arkansas. Serving Grand Lake, Tenkiller Lake, Beaver Lake and surrounding areas.";
+  const keywords = "mobile detailing service areas, Oklahoma detailing, Arkansas detailing, Grand Lake, Tenkiller Lake, Beaver Lake, Northeast Oklahoma, Northwest Arkansas";
   // Oklahoma locations
   const oklahomaLocations: Location[] = [
     {
@@ -131,13 +135,64 @@ const ServiceAreasIndex = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Service Areas | SWANKIES Elite Detail & Restoration | Oklahoma & Arkansas</title>
-        <meta name="description" content="SWANKIES Elite Detail & Restoration provides premium mobile detailing services across Northeast Oklahoma and Northwest Arkansas. Find your location for professional auto, boat, and motorcycle detailing." />
-        <meta property="og:title" content="Service Areas | SWANKIES Elite Detail & Restoration" />
-        <meta property="og:description" content="Mobile detailing services across Oklahoma and Arkansas. Professional auto, boat, and motorcycle detailing at your location." />
-        <meta property="og:type" content="website" />
-        <meta name="keywords" content="mobile detailing, Oklahoma detailing, Arkansas detailing, boat detailing, auto detailing, car detailing, motorcycle detailing, RV detailing" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
         <link rel="canonical" href="https://swankieselite.com/service-areas" />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://swankieselite.com/service-areas" />
+        <meta property="og:image" content="https://swankieselite.com/og-service-areas.jpg" />
+        
+        {/* Schema.org structured data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": title,
+            "description": description,
+            "publisher": {
+              "@type": "LocalBusiness",
+              "name": "SWANKIES Elite Detail & Restoration",
+              "telephone": "+19188227188",
+              "areaServed": [
+                {
+                  "@type": "State",
+                  "name": "Oklahoma"
+                },
+                {
+                  "@type": "State",
+                  "name": "Arkansas"
+                }
+              ]
+            },
+            "mainEntity": {
+              "@type": "Service",
+              "serviceType": "Mobile Detailing",
+              "areaServed": [
+                ...oklahomaLocations.map(loc => ({
+                  "@type": "Place",
+                  "name": loc.name,
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressRegion": "OK"
+                  }
+                })),
+                ...arkansasLocations.map(loc => ({
+                  "@type": "Place",
+                  "name": loc.name,
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressRegion": "AR"
+                  }
+                }))
+              ]
+            }
+          })}
+        </script>
       </Helmet>
       
       <Header />
