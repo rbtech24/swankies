@@ -38,7 +38,7 @@ const Header = () => {
         <nav className="flex justify-between items-center">
           <Link href="/">
             <a className="text-primary text-3xl font-montserrat font-bold text-shadow-neon">
-              Swankies<span className="text-white">Elite</span>
+              SWANKIES<span className="text-white"> Elite Detail & Restoration</span>
             </a>
           </Link>
           
