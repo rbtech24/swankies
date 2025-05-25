@@ -52,7 +52,7 @@ const About = () => {
           
           <div className="relative">
             <img 
-              src="https://images.pexels.com/photos/1320684/pexels-photo-1320684.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000" 
+              src="https://images.pexels.com/photos/163236/luxury-yacht-boat-speed-water-163236.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000" 
               alt="SWANKIES Professional Boat Detailing" 
               className="rounded-xl shadow-lg object-cover w-full h-[500px]" 
             />
