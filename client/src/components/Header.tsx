@@ -51,14 +51,14 @@ const Header = () => {
           </button>
           
           <ul className="hidden lg:flex items-center space-x-8 font-montserrat">
-            <li><a href="/" className="nav-link text-white hover:text-primary transition duration-300">Home</a></li>
-            <li><a href="/services" className="nav-link text-white hover:text-primary transition duration-300">Services</a></li>
-            <li><a href="/gallery" className="nav-link text-white hover:text-primary transition duration-300">Gallery</a></li>
-            <li><a href="/service-areas" className="nav-link text-white hover:text-primary transition duration-300">Service Areas</a></li>
-            <li><a href="/about" className="nav-link text-white hover:text-primary transition duration-300">About Us</a></li>
-            <li><a href="/testimonials" className="nav-link text-white hover:text-primary transition duration-300">Testimonials</a></li>
-            <li><a href="/booking" className="nav-link text-white hover:text-primary transition duration-300">Book Now</a></li>
-            <li><a href="/contact" className="nav-link text-white hover:text-primary transition duration-300">Contact</a></li>
+            <li><a href="/" onClick={() => window.scrollTo(0, 0)} className="nav-link text-white hover:text-primary transition duration-300">Home</a></li>
+            <li><a href="/services" onClick={() => window.scrollTo(0, 0)} className="nav-link text-white hover:text-primary transition duration-300">Services</a></li>
+            <li><a href="/gallery" onClick={() => window.scrollTo(0, 0)} className="nav-link text-white hover:text-primary transition duration-300">Gallery</a></li>
+            <li><a href="/service-areas" onClick={() => window.scrollTo(0, 0)} className="nav-link text-white hover:text-primary transition duration-300">Service Areas</a></li>
+            <li><a href="/about" onClick={() => window.scrollTo(0, 0)} className="nav-link text-white hover:text-primary transition duration-300">About Us</a></li>
+            <li><a href="/testimonials" onClick={() => window.scrollTo(0, 0)} className="nav-link text-white hover:text-primary transition duration-300">Testimonials</a></li>
+            <li><a href="/booking" onClick={() => window.scrollTo(0, 0)} className="nav-link text-white hover:text-primary transition duration-300">Book Now</a></li>
+            <li><a href="/contact" onClick={() => window.scrollTo(0, 0)} className="nav-link text-white hover:text-primary transition duration-300">Contact</a></li>
             <li>
               <a 
                 href="tel:+19188227188" 
@@ -94,14 +94,14 @@ const Header = () => {
           </div>
           
           <ul className="space-y-4 font-montserrat">
-            <li><a href="/" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Home</a></li>
-            <li><a href="/services" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Services</a></li>
-            <li><a href="/gallery" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Gallery</a></li>
-            <li><a href="/service-areas" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Service Areas</a></li>
-            <li><a href="/about" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">About Us</a></li>
-            <li><a href="/testimonials" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Testimonials</a></li>
-            <li><a href="/booking" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Book Now</a></li>
-            <li><a href="/contact" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Contact</a></li>
+            <li><a href="/" onClick={() => {closeMobileMenu(); window.scrollTo(0, 0);}} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Home</a></li>
+            <li><a href="/services" onClick={() => {closeMobileMenu(); window.scrollTo(0, 0);}} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Services</a></li>
+            <li><a href="/gallery" onClick={() => {closeMobileMenu(); window.scrollTo(0, 0);}} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Gallery</a></li>
+            <li><a href="/service-areas" onClick={() => {closeMobileMenu(); window.scrollTo(0, 0);}} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Service Areas</a></li>
+            <li><a href="/about" onClick={() => {closeMobileMenu(); window.scrollTo(0, 0);}} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">About Us</a></li>
+            <li><a href="/testimonials" onClick={() => {closeMobileMenu(); window.scrollTo(0, 0);}} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Testimonials</a></li>
+            <li><a href="/booking" onClick={() => {closeMobileMenu(); window.scrollTo(0, 0);}} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Book Now</a></li>
+            <li><a href="/contact" onClick={() => {closeMobileMenu(); window.scrollTo(0, 0);}} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Contact</a></li>
             <li className="pt-4">
               <a 
                 href="tel:+19188227188" 

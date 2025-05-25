@@ -10,7 +10,7 @@ const MobileCallButton = () => {
   
   return (
     <div className="fixed bottom-6 right-6 z-50">
-      <a href="tel:9188227188" className="block">
+      <a href="tel:+19188227188" className="block">
         <Button 
           className="rounded-full bg-primary hover:bg-primary/90 shadow-neon p-4 h-16 w-16"
           aria-label="Call us now"
