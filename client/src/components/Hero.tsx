@@ -39,6 +39,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
                 href="/booking" 
+                onClick={() => window.scrollTo(0, 0)}
                 className="bg-primary text-black font-bold py-4 px-8 rounded-full text-lg hover:shadow-neon-lg transition duration-300 transform hover:-translate-y-1 inline-block text-center"
               >
                 Book Your Service

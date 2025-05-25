@@ -67,11 +67,12 @@ const Services = () => {
               <div className="mt-8 text-center flex flex-col gap-3">
                 <a href={service.title === "Auto Detailing" ? "/services/auto-detailing" : 
                          service.title === "Boat Detailing" ? "/services/boat-detailing" : 
-                         "/services/motorcycle-detailing"} 
+                         "/services/motorcycle-detailing"}
+                   onClick={() => window.scrollTo(0, 0)} 
                    className="inline-block bg-transparent border-2 border-primary text-white hover:text-primary font-bold py-3 px-6 rounded-full transition duration-300">
                   View Details
                 </a>
-                <a href="#contact" className="inline-block text-primary hover:text-white">
+                <a href="/contact" onClick={() => window.scrollTo(0, 0)} className="inline-block text-primary hover:text-white">
                   Get Quote
                 </a>
               </div>
@@ -80,7 +81,7 @@ const Services = () => {
         </div>
         
         <div className="mt-16 text-center">
-          <a href="#contact" className="bg-primary text-primary-foreground font-bold py-4 px-8 rounded-full text-lg hover:shadow-neon-lg transition duration-300 transform hover:-translate-y-1">
+          <a href="/booking" onClick={() => window.scrollTo(0, 0)} className="bg-primary text-primary-foreground font-bold py-4 px-8 rounded-full text-lg hover:shadow-neon-lg transition duration-300 transform hover:-translate-y-1">
             Book Your Service
           </a>
         </div>

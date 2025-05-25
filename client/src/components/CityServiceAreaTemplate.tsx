@@ -53,12 +53,13 @@ const CityServiceAreaTemplate: React.FC<CityServiceAreaTemplateProps> = ({
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <a 
                   href="/booking" 
+                  onClick={() => window.scrollTo(0, 0)}
                   className="bg-primary text-black font-bold py-3 px-8 rounded-full text-lg hover:shadow-neon-lg transition duration-300 transform hover:-translate-y-1 inline-block text-center"
                 >
                   Book Now
                 </a>
                 <a 
-                  href="tel:9188227188" 
+                  href="tel:+19188227188" 
                   className="bg-transparent border-2 border-white hover:border-primary text-white hover:text-primary font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:-translate-y-1 inline-block text-center"
                 >
                   Call (918) 822-7188
