@@ -52,8 +52,8 @@ const About = () => {
           
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=1000" 
-              alt="Professional detailing service" 
+              src="https://images.unsplash.com/photo-1635260409812-93fc2a6b27be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=1000" 
+              alt="SWANKIES Professional Car Detailing" 
               className="rounded-xl shadow-lg object-cover w-full h-[500px]" 
             />
             <div className="absolute -bottom-6 -left-6 bg-gradient-dark-2 rounded-xl p-6 shadow-neon w-48 border-2 border-primary">
