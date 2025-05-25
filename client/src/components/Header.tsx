@@ -51,15 +51,16 @@ const Header = () => {
           </button>
           
           <ul className="hidden lg:flex items-center space-x-8 font-montserrat">
-            <li><a href="#home" className="nav-link text-white hover:text-primary transition duration-300">Home</a></li>
-            <li><a href="#services" className="nav-link text-white hover:text-primary transition duration-300">Services</a></li>
-            <li><a href="#gallery" className="nav-link text-white hover:text-primary transition duration-300">Gallery</a></li>
-            <li><a href="#about" className="nav-link text-white hover:text-primary transition duration-300">About Us</a></li>
-            <li><a href="#testimonials" className="nav-link text-white hover:text-primary transition duration-300">Testimonials</a></li>
-            <li><a href="#contact" className="nav-link text-white hover:text-primary transition duration-300">Contact</a></li>
+            <li><a href="/#home" className="nav-link text-white hover:text-primary transition duration-300">Home</a></li>
+            <li><a href="/#services" className="nav-link text-white hover:text-primary transition duration-300">Services</a></li>
+            <li><a href="/#gallery" className="nav-link text-white hover:text-primary transition duration-300">Gallery</a></li>
+            <li><a href="/service-areas" className="nav-link text-white hover:text-primary transition duration-300">Service Areas</a></li>
+            <li><a href="/#about" className="nav-link text-white hover:text-primary transition duration-300">About Us</a></li>
+            <li><a href="/#testimonials" className="nav-link text-white hover:text-primary transition duration-300">Testimonials</a></li>
+            <li><a href="/#contact" className="nav-link text-white hover:text-primary transition duration-300">Contact</a></li>
             <li>
               <a 
-                href="tel:+19185551234" 
+                href="tel:+19188227188" 
                 className="ml-4 bg-primary text-primary-foreground font-bold py-2 px-6 rounded-full hover:shadow-neon-lg transition duration-300"
               >
                 <i className="fas fa-phone-alt mr-2"></i>Call Now
@@ -92,15 +93,16 @@ const Header = () => {
           </div>
           
           <ul className="space-y-4 font-montserrat">
-            <li><a href="#home" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Home</a></li>
-            <li><a href="#services" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Services</a></li>
-            <li><a href="#gallery" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Gallery</a></li>
-            <li><a href="#about" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">About Us</a></li>
-            <li><a href="#testimonials" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Testimonials</a></li>
-            <li><a href="#contact" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Contact</a></li>
+            <li><a href="/#home" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Home</a></li>
+            <li><a href="/#services" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Services</a></li>
+            <li><a href="/#gallery" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Gallery</a></li>
+            <li><a href="/service-areas" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Service Areas</a></li>
+            <li><a href="/#about" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">About Us</a></li>
+            <li><a href="/#testimonials" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Testimonials</a></li>
+            <li><a href="/#contact" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Contact</a></li>
             <li className="pt-4">
               <a 
-                href="tel:+19185551234" 
+                href="tel:+19188227188" 
                 className="flex items-center justify-center bg-primary text-primary-foreground font-bold py-3 px-6 rounded-full hover:shadow-neon-lg transition duration-300 w-full"
               >
                 <i className="fas fa-phone-alt mr-2"></i>Call Now
