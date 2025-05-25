@@ -22,6 +22,13 @@ import GrandLakePage from "@/pages/service-areas/GrandLakePage";
 import TenkillerLakePage from "@/pages/service-areas/TenkillerLakePage";
 import BeaverLakePage from "@/pages/service-areas/BeaverLakePage";
 
+// City Service Area Pages
+import GroveDetailingPage from "@/pages/service-areas/cities/GroveDetailingPage";
+import TahlequahDetailingPage from "@/pages/service-areas/cities/TahlequahDetailingPage";
+import BentonvilleDetailingPage from "@/pages/service-areas/cities/BentonvilleDetailingPage";
+import RogersDetailingPage from "@/pages/service-areas/cities/RogersDetailingPage";
+import ClaremoreDetailingPage from "@/pages/service-areas/cities/ClaremoreDetailingPage";
+
 function Router() {
   return (
     <Switch>
@@ -37,10 +44,17 @@ function Router() {
       <Route path="/services/boat-detailing" component={BoatDetailingPage} />
       <Route path="/services/motorcycle-detailing" component={MotorcycleDetailingPage} />
       
-      {/* Service Area Routes */}
+      {/* Service Area Routes - Lakes */}
       <Route path="/service-areas/detailing-service-grand-lake" component={GrandLakePage} />
       <Route path="/service-areas/detailing-service-tenkiller-lake" component={TenkillerLakePage} />
       <Route path="/service-areas/detailing-service-beaver-lake" component={BeaverLakePage} />
+      
+      {/* Service Area Routes - Cities */}
+      <Route path="/service-areas/grove-oklahoma" component={GroveDetailingPage} />
+      <Route path="/service-areas/tahlequah-oklahoma" component={TahlequahDetailingPage} />
+      <Route path="/service-areas/bentonville-arkansas" component={BentonvilleDetailingPage} />
+      <Route path="/service-areas/rogers-arkansas" component={RogersDetailingPage} />
+      <Route path="/service-areas/claremore-oklahoma" component={ClaremoreDetailingPage} />
       
       <Route component={NotFound} />
     </Switch>
