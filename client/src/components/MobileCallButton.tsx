@@ -1,51 +1,24 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { Button } from '@/components/ui/button';
+import { Phone } from 'lucide-react';
 
 const MobileCallButton = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Check if the device is mobile
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-
-    // Check visibility based on scroll position
-    const handleScroll = () => {
-      if (window.scrollY > 200) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    // Initial checks
-    checkMobile();
-    handleScroll();
-
-    // Add event listeners
-    window.addEventListener('resize', checkMobile);
-    window.addEventListener('scroll', handleScroll);
-
-    // Cleanup event listeners
-    return () => {
-      window.removeEventListener('resize', checkMobile);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
+  const isMobile = useIsMobile();
+  
   if (!isMobile) return null;
-
+  
   return (
-    <a
-      href="tel:+19188227188"
-      className={`fixed bottom-6 right-6 bg-primary text-primary-foreground rounded-full shadow-neon z-40 flex items-center justify-center h-16 w-16 transform transition-all duration-300 ${
-        isVisible ? 'scale-100 opacity-100' : 'scale-90 opacity-0 pointer-events-none'
-      }`}
-      aria-label="Call Now"
-    >
-      <i className="fas fa-phone-alt text-2xl"></i>
-    </a>
+    <div className="fixed bottom-6 right-6 z-50">
+      <a href="tel:9188227188" className="block">
+        <Button 
+          className="rounded-full bg-primary hover:bg-primary/90 shadow-neon p-4 h-16 w-16"
+          aria-label="Call us now"
+        >
+          <Phone className="h-8 w-8 text-black" />
+        </Button>
+      </a>
+    </div>
   );
 };
 

@@ -165,7 +165,7 @@ const ServiceAreas = () => {
         <section className="py-16 bg-gradient-dark-2">
           <div className="container mx-auto px-4 text-center">
             <h1 className="font-montserrat font-bold text-4xl md:text-5xl mb-6">
-              Our <span className="text-primary text-shadow-neon">Service</span> Areas
+              <span className="text-primary text-shadow-neon">SWANKIES</span> Service Areas
             </h1>
             <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-8">
               We deliver elite detailing services directly to your location—serving Northeast Oklahoma 
@@ -189,7 +189,7 @@ const ServiceAreas = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="font-montserrat font-bold text-3xl mb-6">
-                  We <span className="text-primary text-shadow-neon">Come To</span> You
+                  <span className="text-primary text-shadow-neon">Mobile</span> Service To You
                 </h2>
                 <p className="text-lg mb-6 text-gray-300">
                   Your time is valuable—spend it where it matters. Our fully-equipped mobile unit brings 

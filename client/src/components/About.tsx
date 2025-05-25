@@ -58,8 +58,8 @@ const About = () => {
             />
             <div className="absolute -bottom-6 -left-6 bg-gradient-dark-2 rounded-xl p-6 shadow-neon w-48 border-2 border-primary">
               <div className="flex flex-col items-center text-center">
-                <span className="text-primary font-montserrat font-bold text-4xl">5+</span>
-                <span className="text-white font-medium mt-2">Years of Experience</span>
+                <span className="text-primary font-montserrat font-bold text-xl">CERTIFIED</span>
+                <span className="text-white font-medium mt-2">Professional Service</span>
               </div>
             </div>
           </div>

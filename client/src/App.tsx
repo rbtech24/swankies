@@ -11,6 +11,7 @@ import GalleryPage from "@/pages/GalleryPage";
 import AboutPage from "@/pages/AboutPage";
 import TestimonialsPage from "@/pages/TestimonialsPage";
 import ContactPage from "@/pages/ContactPage";
+import MobileCallButton from "@/components/MobileCallButton";
 
 function Router() {
   return (
@@ -33,6 +34,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <Router />
+        <MobileCallButton />
       </TooltipProvider>
     </QueryClientProvider>
   );
