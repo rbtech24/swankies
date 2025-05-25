@@ -56,11 +56,11 @@ const Hero = () => {
       
       {/* Feature bars */}
       <div className="absolute right-0 bottom-28 md:bottom-40 z-10 w-full md:w-2/3 lg:w-1/2 px-4">
-        <div className="bg-black/40 backdrop-blur-sm p-3 rounded-l-lg border-l-4 border-primary mb-2 transform translate-x-4 hover:translate-x-0 transition-transform duration-300">
-          <p className="text-white"><span className="text-primary font-bold">✓</span> Mobile service to your location</p>
+        <div className="bg-black/40 backdrop-blur-sm p-3 rounded-l-lg border-l-4 border-primary mb-3 transform translate-x-4 hover:translate-x-0 transition-transform duration-300">
+          <p className="text-white"><span className="text-primary">✓</span> Mobile service to your location</p>
         </div>
-        <div className="bg-black/40 backdrop-blur-sm p-3 rounded-l-lg border-l-4 border-primary mb-2 transform translate-x-12 hover:translate-x-0 transition-transform duration-300">
-          <p className="text-white"><span className="text-primary font-bold">✓</span> Premium detailing</p>
+        <div className="bg-black/40 backdrop-blur-sm p-3 rounded-l-lg border-l-4 border-primary transform translate-x-12 hover:translate-x-0 transition-transform duration-300">
+          <p className="text-white"><span className="text-primary">✓</span> Premium detailing</p>
         </div>
       </div>
       
