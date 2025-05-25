@@ -24,10 +24,10 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="font-montserrat font-bold text-4xl mb-6">
-              About <span className="text-primary text-shadow-neon">Swankies Elite</span> Detailing
+              About <span className="text-primary text-shadow-neon">SWANKIES</span> Elite Detail & Restoration
             </h2>
             <p className="text-lg mb-6 text-gray-300">
-              Founded with a passion for perfection, Swankies Elite Detailing brings professional-grade detailing services directly to your location. We specialize in transforming vehicles, boats, and motorcycles with meticulous attention to detail.
+              Founded with a passion for perfection, SWANKIES Elite Detail & Restoration brings professional-grade detailing services directly to your location. We specialize in transforming vehicles, boats, and motorcycles with meticulous attention to detail.
             </p>
             <p className="text-lg mb-8 text-gray-300">
               Our mobile detailing service covers Lake Eucha, Lake Hudson, Lake Tenkiller, and Beaver Lake areas in Oklahoma and Arkansas, making premium detailing convenient for you.
