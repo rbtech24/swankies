@@ -2,21 +2,23 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   const quickLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "About Us", href: "#about" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact", href: "#contact" }
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Service Areas", href: "/service-areas" },
+    { name: "About Us", href: "/about" },
+    { name: "Testimonials", href: "/testimonials" },
+    { name: "Book Now", href: "/booking" },
+    { name: "Contact", href: "/contact" }
   ];
   
   const services = [
-    { name: "Auto Detailing", href: "#services" },
-    { name: "Boat Detailing", href: "#services" },
-    { name: "Motorcycle Detailing", href: "#services" },
-    { name: "Paint Correction", href: "#services" },
-    { name: "Ceramic Coating", href: "#services" },
-    { name: "Interior Detailing", href: "#services" }
+    { name: "Auto Detailing", href: "/services/auto-detailing" },
+    { name: "Boat Detailing", href: "/services/boat-detailing" },
+    { name: "Motorcycle Detailing", href: "/services/motorcycle-detailing" },
+    { name: "Paint Correction", href: "/services/paint-correction" },
+    { name: "Ceramic Coating", href: "/services/ceramic-coating" },
+    { name: "Interior Detailing", href: "/services/interior-detailing" }
   ];
 
   return (
