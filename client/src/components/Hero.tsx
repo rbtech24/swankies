@@ -29,9 +29,9 @@ const Hero = () => {
         <div className="md:flex items-center">
           <div className="md:w-3/5 lg:w-1/2 text-left mb-10 md:mb-0">
             <h1 className="font-montserrat font-bold text-5xl md:text-7xl mb-4 leading-none">
-              <span className="text-primary text-shadow-neon block">SWANKIES</span>
-              <span className="text-white">Elite Detail &</span><br />
-              <span className="text-white">Restoration</span>
+              <span className="text-primary text-shadow-neon block">Professional Mobile Detailing</span>
+              <span className="text-white">Auto, Boat & Motorcycle</span><br />
+              <span className="text-white">Oklahoma & Arkansas</span>
             </h1>
             <p className="text-xl md:text-2xl mb-10 opacity-90 max-w-2xl">
               Premium mobile auto, boat, and motorcycle detailing services. Serving Northeast Oklahoma and Northwest Arkansas.
