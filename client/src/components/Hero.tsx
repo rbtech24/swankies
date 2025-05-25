@@ -20,7 +20,7 @@ const Hero = () => {
       {/* Background image with parallax effect */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70 bg-background hero-parallax"
         style={{
-          backgroundImage: "url('https://pixabay.com/get/g24e72d3dfe14bdff2a9dc9cbbd09d84e6db3e0bc16b13ba39e3bd01c7beb6f22f40095989ae6fe76cb6f5e5c9cfc8d2b3cccf3d7de96c31b5979b4433cb26a29_1280.jpg')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1621939514649-280e2ee25f60?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')",
         }}>
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-background/20"></div>
@@ -53,8 +53,8 @@ const Hero = () => {
           <div className="md:w-1/2 relative">
             <div className="relative rounded-xl overflow-hidden shadow-2xl shadow-primary/30 max-w-lg mx-auto transform hover:scale-[1.02] transition-transform duration-300">
               <img 
-                src="https://images.unsplash.com/photo-1606073682345-2df4ffa33d58?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                alt="SWANKIES Elite Detail & Restoration - Red Corvette Detail" 
+                src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                alt="SWANKIES Elite Detail & Restoration - Professional Auto Detailing" 
                 className="w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
