@@ -273,11 +273,30 @@ const ServiceAreasIndex = () => {
               All <span className="text-primary text-shadow-neon">Cities</span> We Serve
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-              {cities.map((city, index) => (
-                <div key={index} className="bg-card/30 rounded-lg p-3 text-center">
-                  <span className="text-white">{city}</span>
-                </div>
-              ))}
+              {cities.map((city, index) => {
+                // Determine which state based on cities typically in Arkansas vs Oklahoma
+                const isArkansas = ['Bella Vista', 'Bentonville', 'Centerton', 'Decatur', 'Elkins', 
+                                   'Farmington', 'Fayetteville', 'Gentry', 'Gravette', 'Greenland', 
+                                   'Lowell', 'Pea Ridge', 'Rogers', 'Springdale', 'West Siloam Springs'].includes(city);
+                
+                const state = isArkansas ? 'arkansas' : 'oklahoma';
+                const citySlug = city.toLowerCase().replace(/\s+/g, '-');
+                
+                // Check if we have created specific pages for these cities
+                const hasDetailPage = ['Grove', 'Tahlequah', 'Bentonville', 'Rogers', 'Claremore'].includes(city);
+                
+                return (
+                  <div key={index} className="bg-card/30 rounded-lg p-3 text-center hover:bg-card/50 transition-colors">
+                    {hasDetailPage ? (
+                      <Link href={`/service-areas/${citySlug}-${state}`}>
+                        <a className="text-white hover:text-primary transition-colors">{city}</a>
+                      </Link>
+                    ) : (
+                      <span className="text-white">{city}</span>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
