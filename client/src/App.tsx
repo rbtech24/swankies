@@ -11,6 +11,9 @@ import GalleryPage from "@/pages/GalleryPage";
 import AboutPage from "@/pages/AboutPage";
 import TestimonialsPage from "@/pages/TestimonialsPage";
 import ContactPage from "@/pages/ContactPage";
+import AutoDetailingPage from "@/pages/AutoDetailingPage";
+import BoatDetailingPage from "@/pages/BoatDetailingPage";
+import MotorcycleDetailingPage from "@/pages/MotorcycleDetailingPage";
 import MobileCallButton from "@/components/MobileCallButton";
 
 function Router() {
@@ -23,6 +26,9 @@ function Router() {
       <Route path="/about" component={AboutPage} />
       <Route path="/testimonials" component={TestimonialsPage} />
       <Route path="/contact" component={ContactPage} />
+      <Route path="/services/auto-detailing" component={AutoDetailingPage} />
+      <Route path="/services/boat-detailing" component={BoatDetailingPage} />
+      <Route path="/services/motorcycle-detailing" component={MotorcycleDetailingPage} />
       <Route component={NotFound} />
     </Switch>
   );

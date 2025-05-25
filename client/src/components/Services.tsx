@@ -64,8 +64,14 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 text-center">
-                <a href="#contact" className="inline-block bg-transparent border-2 border-primary text-white hover:text-primary font-bold py-3 px-6 rounded-full transition duration-300">
+              <div className="mt-8 text-center flex flex-col gap-3">
+                <a href={service.title === "Auto Detailing" ? "/services/auto-detailing" : 
+                         service.title === "Boat Detailing" ? "/services/boat-detailing" : 
+                         "/services/motorcycle-detailing"} 
+                   className="inline-block bg-transparent border-2 border-primary text-white hover:text-primary font-bold py-3 px-6 rounded-full transition duration-300">
+                  View Details
+                </a>
+                <a href="#contact" className="inline-block text-primary hover:text-white">
                   Get Quote
                 </a>
               </div>
