@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Swankies Elite Detailing offers premium mobile auto, boat, and motorcycle detailing services. Serving Lake Eucha, Lake Hudson, Lake Tenkiller, and Beaver Lake areas in Oklahoma and Arkansas. Paint correction, ceramic coating, boat restoration, and window tinting.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <title>Swankies Elite Detailing - Mobile Auto & Boat Detailing | Lake Eucha, Lake Hudson, Lake Tenkiller, Beaver Lake</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #0a0a0a;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(57, 255, 20, 0.3);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #39ff14;
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #39ff14;
+            text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #39ff14;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Mobile Menu Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 280px;
+                background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 4rem 2rem 2rem 2rem;
+                box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+                z-index: 1001;
+                transition: right 0.3s ease;
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+
+            .nav-links a {
+                display: block;
+                width: 100%;
+                padding: 1rem 0;
+                font-size: 1.1rem;
+                border-bottom: 1px solid rgba(57, 255, 20, 0.2);
+                text-align: left;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+                z-index: 1002;
+                font-size: 1.5rem;
+                padding: 0.5rem;
+            }
+
+            .mobile-menu-close {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                background: none;
+                border: none;
+                color: #39ff14;
+                font-size: 1.8rem;
+                cursor: pointer;
+                z-index: 1003;
+            }
+
+            /* Mobile Menu Overlay */
+            .mobile-menu-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.7);
+                z-index: 1000;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .mobile-menu-overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAMgCAYAAABSxjpOAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADh0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uMy4xLjEsIGh0dHA6Ly9tYXRwbG90bGliLm9yZy8QZhcZAAAgAElEQVR4nOzde7x1V10f+s8397kne2cnJAESIiEBQiAJkARIQgIJJCEJJCEJJCEJJCEJJCEJJCEJJCEJJCEJJCEJJCEJJCEJJCEJJCEJJCEJJCEJJCEJJCEJJCEJJCEJJCEJJCEJJCEJ') no-repeat center center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(57,255,20,0.05) 100%);
+            z-index: 1;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero-content .highlight {
+            color: #39ff14;
+            text-shadow: 0 0 15px rgba(57, 255, 20, 0.8);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #39ff14, #2db40f);
+            color: #000;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(57, 255, 20, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(57, 255, 20, 0.6);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: #fff;
+        }
+
+        .services h2 .highlight {
+            color: #39ff14;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 2px solid rgba(57, 255, 20, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #39ff14;
+            box-shadow: 0 20px 40px rgba(57, 255, 20, 0.2);
+        }
+
+        .service-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #39ff14;
+            text-align: center;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            color: #fff;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(57, 255, 20, 0.1);
+            font-size: 1.1rem;
+        }
+
+        .service-list li:before {
+            content: "✓";
+            color: #39ff14;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .gallery h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: #fff;
+        }
+
+        .gallery h2 .highlight {
+            color: #39ff14;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .auto-detail {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('http://rodb43.sg-host.com/wp-content/uploads/2025/05/1000067612.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .motorcycle-detail {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('http://rodb43.sg-host.com/wp-content/uploads/2025/05/1000067598.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .boat-exterior {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('http://rodb43.sg-host.com/wp-content/uploads/2025/05/1000067596.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .boat-interior {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('http://rodb43.sg-host.com/wp-content/uploads/2025/05/1000067597.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            color: white;
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
+        }
+
+        .overlay h3 {
+            color: #39ff14;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .overlay p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        .about {
+            padding: 100px 0;
+            background: #0a0a0a;
+            color: #fff;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: #39ff14;
+        }
+
+        .about-text p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid rgba(57, 255, 20, 0.2);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-item::before {
+            content: "⭐";
+            margin-right: 15px;
+            color: #39ff14;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #fff;
+            padding: 4rem 0 2rem 0;
+            border-top: 3px solid rgba(57, 255, 20, 0.3);
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #39ff14, transparent);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #39ff14;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 5px rgba(57, 255, 20, 0.3);
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #39ff14;
+            text-shadow: 0 0 3px rgba(57, 255, 20, 0.5);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(57, 255, 20, 0.1);
+            border: 2px solid rgba(57, 255, 20, 0.3);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            color: #39ff14;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(57, 255, 20, 0.2);
+            border-color: #39ff14;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(57, 255, 20, 0.3);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(57, 255, 20, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: #888;
+            margin: 0;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #39ff14;
+        }
+
+        /* Mobile Footer Adjustments */
+        @media (max-width: 768px) {
+            footer {
+                padding: 3rem 0 1.5rem 0;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mobile-emphasis {
+                padding: 2rem;
+            }
+
+            .footer-bottom {
+                padding-bottom: 80px; /* Make room for mobile call button */
+            }
+
+            .overlay {
+                transform: translateY(0);
+                background: rgba(0,0,0,0.8);
+            }
+        }
+
+        /* Animations */
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px rgba(57, 255, 20, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(57, 255, 20, 0.8); }
+            100% { text-shadow: 0 0 5px rgba(57, 255, 20, 0.5); }
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px rgba(57, 255, 20, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(57, 255, 20, 0.8); }
+            100% { text-shadow: 0 0 5px rgba(57, 255, 20, 0.5); }
+        }
+
+        .logo {
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            /* Header Mobile */
+            .container {
+                padding: 0 15px;
+                max-width: 100%;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+
+            /* Hero Mobile */
+            .hero {
+                height: 80vh;
+                padding: 2rem 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+                line-height: 1.2;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+                padding: 0 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+
+            /* Services Mobile */
+            .services {
+                padding: 60px 0;
+            }
+            
+            .services h2 {
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.5rem;
+            }
+
+            /* Gallery Mobile */
+            .gallery {
+                padding: 60px 0;
+            }
+            
+            .gallery h2 {
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .overlay {
+                transform: translateY(0);
+                background: rgba(0,0,0,0.85);
+                padding: 1.5rem;
+            }
+
+            /* Service Areas Mobile */
+            .service-areas {
+                padding: 60px 0;
+            }
+
+            .areas-simple-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            #service-map {
+                height: 300px !important;
+            }
+
+            /* Override inline styles for mobile */
+            .service-areas h2[style] {
+                font-size: 2.5rem !important;
+            }
+
+            .service-areas p[style] {
+                font-size: 1.2rem !important;
+                padding: 0 1rem !important;
+            }
+
+            .service-areas div[style*="padding: 2rem"] {
+                padding: 1.5rem !important;
+            }
+
+            .service-areas h3[style*="font-size: 1.8rem"] {
+                font-size: 1.5rem !important;
+            }
+
+            .service-areas p[style*="font-size: 1.2rem"] {
+                font-size: 1.1rem !important;
+            }
+
+            .service-areas div[style*="padding: 3rem 2rem"] {
+                padding: 2rem 1rem !important;
+            }
+
+            /* About Mobile - Enhanced as final content section */
+            .about {
+                padding: 60px 0 80px 0;
+            }
+            
+            .about h2 {
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .about-text p {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+                line-height: 1.7;
+            }
+
+            .about-features {
+                padding: 2rem 1.5rem;
+                text-align: center;
+            }
+
+            .feature-item {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+                padding: 0.5rem 0;
+            }
+
+            /* Footer Mobile */
+            footer {
+                padding: 3rem 0 2rem 0;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-section h3 {
+                font-size: 1.2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .footer-links {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .services h2,
+            .gallery h2,
+            .about h2,
+            .contact h2 {
+                font-size: 2rem;
+            }
+
+            .service-card,
+            .contact-item,
+            .about-features {
+                padding: 1.5rem 1rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .overlay {
+                padding: 1rem;
+            }
+
+            .overlay h3 {
+                font-size: 1.1rem;
+            }
+
+            .overlay p {
+                font-size: 0.85rem;
+            }
+
+            /* Ensure all text is readable */
+            .feature-item {
+                font-size: 1rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .contact-info h3 {
+                font-size: 1.1rem;
+            }
+
+            .footer-section h3 {
+                font-size: 1.1rem;
+            }
+
+            .footer-section p,
+            .footer-section li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 360px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .services h2,
+            .gallery h2,
+            .about h2,
+            .contact h2 {
+                font-size: 1.8rem;
+            }
+
+            .service-card,
+            .contact-item {
+                padding: 1rem;
+            }
+        }
+
+        /* Mobile Call Button - Improved Responsiveness */
+        .mobile-call-button {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            background: linear-gradient(45deg, #39ff14, #2db40f);
+            color: #000;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(57, 255, 20, 0.6), 
+                        0 0 20px rgba(57, 255, 20, 0.4),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(57, 255, 20, 0.8);
+            animation: neonPulse 2s ease-in-out infinite;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            min-width: 180px;
+            text-align: center;
+        }
+
+        .mobile-call-button:hover,
+        .mobile-call-button:active {
+            transform: translateX(-50%) translateY(-3px);
+            box-shadow: 0 8px 30px rgba(57, 255, 20, 0.8), 
+                        0 0 30px rgba(57, 255, 20, 0.6),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            text-decoration: none;
+            color: #000;
+        }
+
+        @keyframes neonPulse {
+            0% { 
+                box-shadow: 0 5px 20px rgba(57, 255, 20, 0.6), 
+                           0 0 20px rgba(57, 255, 20, 0.4),
+                           inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            }
+            50% { 
+                box-shadow: 0 5px 25px rgba(57, 255, 20, 0.8), 
+                           0 0 30px rgba(57, 255, 20, 0.6),
+                           inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            }
+            100% { 
+                box-shadow: 0 5px 20px rgba(57, 255, 20, 0.6), 
+                           0 0 20px rgba(57, 255, 20, 0.4),
+                           inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        /* Show call button only on mobile devices */
+        @media (max-width: 768px) {
+            .mobile-call-button {
+                display: block;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-content p {
+                font-size: 1.3rem;
+                padding: 0 1rem;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-card {
+                padding: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .overlay {
+                transform: translateY(0);
+                background: rgba(0,0,0,0.8);
+            }
+
+            /* Service Areas Mobile */
+            .areas-simple-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            #service-map {
+                height: 300px !important;
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .mobile-call-button {
+                padding: 15px 25px;
+                font-size: 1.1rem;
+                bottom: 15px;
+                min-width: 160px;
+            }
+
+            .service-card,
+            .area-card {
+                padding: 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">SWANKIES</div>
+            <ul class="nav-links">
+                <button class="mobile-menu-close">✕</button>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#areas">Service Areas</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+        <div class="mobile-menu-overlay"></div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1><span class="highlight">SWANKIES</span><br>Elite Detailing</h1>
+                <p>Premium Mobile Auto, Boat & Motorcycle Detailing<br>Serving Lake Eucha, Lake Hudson, Lake Tenkiller & Beaver Lake</p>
+                <a href="#areas" class="cta-button">View Service Areas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our <span class="highlight">Elite</span> Services</h2>
+            <div class="service-grid">
+                <!-- Auto Services -->
+                <div class="service-card">
+                    <h3>🚗 Mobile Automotive Detailing</h3>
+                    <ul class="service-list">
+                        <li>Full Interior & Exterior Detailing</li>
+                        <li>Professional Paint Correction</li>
+                        <li>Premium Ceramic Coating</li>
+                        <li>Paint Restoration Services</li>
+                        <li>Window Tinting</li>
+                        <li>Hydrophobic Coating Protection</li>
+                        <li>Swirl Mark & Oxidation Removal</li>
+                        <li>Mobile Service to Your Location</li>
+                    </ul>
+                </div>
+
+                <!-- Boat Services -->
+                <div class="service-card">
+                    <h3>⛵ Mobile Marine Detailing</h3>
+                    <ul class="service-list">
+                        <li>Complete Hull & Topside Detailing</li>
+                        <li>Gel Coat Restoration & Repair</li>
+                        <li>Marine Ceramic Coating</li>
+                        <li>Boat Restoration Services</li>
+                        <li>Fiberglass Repair & Polish</li>
+                        <li>Marine Window Tinting</li>
+                        <li>Dockside Mobile Service</li>
+                        <li>UV Protection Treatments</li>
+                    </ul>
+                </div>
+
+                <!-- Motorcycle Services -->
+                <div class="service-card">
+                    <h3>🏍️ Mobile Motorcycle Detailing</h3>
+                    <ul class="service-list">
+                        <li>Complete Bike Wash & Detail</li>
+                        <li>Chrome & Metal Polishing</li>
+                        <li>Paint Protection Film (PPF)</li>
+                        <li>Custom Paint Restoration</li>
+                        <li>Engine Degreasing & Cleaning</li>
+                        <li>Leather Conditioning</li>
+                        <li>Mobile Service Available</li>
+                        <li>Show-Quality Finishes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Our <span class="highlight">Elite</span> Work</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="image-placeholder auto-detail">
+                        <div class="overlay">
+                            <h3>Premium Auto Detailing</h3>
+                            <p>Professional exterior detailing on a red Corvette, showcasing our mobile service setup</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="image-placeholder motorcycle-detail">
+                        <div class="overlay">
+                            <h3>Motorcycle Care</h3>
+                            <p>Expert ceramic coating application on a Harley-Davidson using premium products</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="image-placeholder boat-exterior">
+                        <div class="overlay">
+                            <h3>Marine Polishing</h3>
+                            <p>Professional hull polishing and restoration work on luxury watercraft</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="image-placeholder boat-interior">
+                        <div class="overlay">
+                            <h3>Interior Detailing</h3>
+                            <p>Meticulous cleaning and protection of boat interiors and control panels</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section id="areas" class="service-areas">
+        <div class="container">
+            <h2 style="color: #ffffff !important;">Mobile Service <span style="color: #39ff14 !important;">Areas</span></h2>
+            <p style="color: #ffffff !important; text-align: center; font-size: 1.4rem; margin-bottom: 3rem;">We bring elite detailing services directly to you across Oklahoma and Arkansas lake communities.</p>
+            
+            <div class="areas-simple-grid">
+                <div style="background: #1a1a1a !important; padding: 2rem; border: 4px solid #39ff14; border-radius: 15px; margin-bottom: 1rem;">
+                    <h3 style="color: #39ff14 !important; font-size: 1.8rem; text-align: center; margin-bottom: 1rem;">Lake Eucha, Oklahoma</h3>
+                    <p style="color: #ffffff !important; font-size: 1.2rem; text-align: center; margin-bottom: 1rem; font-weight: bold;">Jay • New Eucha • Kenwood • Siloam Springs • Tahlequah</p>
+                    <p style="color: #ffffff !important; font-size: 1rem; text-align: center;">Mobile car detailing, boat detailing, ceramic coating, paint correction</p>
+                </div>
+
+                <div style="background: #1a1a1a !important; padding: 2rem; border: 4px solid #39ff14; border-radius: 15px; margin-bottom: 1rem;">
+                    <h3 style="color: #39ff14 !important; font-size: 1.8rem; text-align: center; margin-bottom: 1rem;">Lake Hudson, Oklahoma</h3>
+                    <p style="color: #ffffff !important; font-size: 1.2rem; text-align: center; margin-bottom: 1rem; font-weight: bold;">Pryor • Salina • Locust Grove • Strang • Sportsmen Acres</p>
+                    <p style="color: #ffffff !important; font-size: 1rem; text-align: center;">Mobile detailing, boat restoration, window tinting, marine ceramic coating</p>
+                </div>
+
+                <div style="background: #1a1a1a !important; padding: 2rem; border: 4px solid #39ff14; border-radius: 15px; margin-bottom: 1rem;">
+                    <h3 style="color: #39ff14 !important; font-size: 1.8rem; text-align: center; margin-bottom: 1rem;">Lake Tenkiller, Oklahoma</h3>
+                    <p style="color: #ffffff !important; font-size: 1.2rem; text-align: center; margin-bottom: 1rem; font-weight: bold;">Tahlequah • Gore • Vian • Park Hill • Cookson • Pettit</p>
+                    <p style="color: #ffffff !important; font-size: 1rem; text-align: center;">Boat detailing, hydrophobic coating, paint restoration, marine services</p>
+                </div>
+
+                <div style="background: #1a1a1a !important; padding: 2rem; border: 4px solid #39ff14; border-radius: 15px; margin-bottom: 1rem;">
+                    <h3 style="color: #39ff14 !important; font-size: 1.8rem; text-align: center; margin-bottom: 1rem;">Beaver Lake, Arkansas</h3>
+                    <p style="color: #ffffff !important; font-size: 1.2rem; text-align: center; margin-bottom: 1rem; font-weight: bold;">Eureka Springs • Rogers • Bentonville • Springdale • Beaver • Garfield</p>
+                    <p style="color: #ffffff !important; font-size: 1rem; text-align: center;">Elite detailing, ceramic coating, boat restoration, marine PPF services</p>
+                </div>
+            </div>
+
+            <div style="background: #39ff14 !important; padding: 3rem 2rem; border-radius: 15px; text-align: center; margin: 3rem 0;">
+                <h3 style="color: #000000 !important; font-size: 2rem; margin-bottom: 1rem;">🚐 We Come to You!</h3>
+                <p style="color: #000000 !important; font-size: 1.2rem; font-weight: 600;">Our fully-equipped mobile unit brings professional equipment and premium products directly to your driveway, marina, or dock. No need to travel - we make it convenient!</p>
+            </div>
+
+            <!-- Interactive Service Map -->
+            <div style="background: #1a1a1a; padding: 2rem; border-radius: 15px; border: 4px solid #39ff14; margin-top: 3rem;">
+                <h3 style="color: #39ff14 !important; font-size: 2rem; text-align: center; margin-bottom: 1rem;">📍 Our Service Areas Map</h3>
+                <p style="color: #ffffff !important; font-size: 1.1rem; text-align: center; margin-bottom: 2rem;">Click on the markers to see the towns we serve in each lake area</p>
+                <div id="service-map" style="height: 400px; width: 100%; border-radius: 10px; border: 2px solid #39ff14;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Why Choose Swankies?</h2>
+                    <p>At Swankies Elite Detailing, we specialize in mobile detailing services across Oklahoma and Arkansas lake communities. Our team brings professional-grade equipment and premium products directly to your location – whether that's your driveway, marina slip, or lakeside dock.</p>
+                    <p>From Lake Eucha to Beaver Lake, we understand the unique needs of lake life. Boat owners know the challenges of algae, water spots, and UV damage. Car enthusiasts appreciate our paint correction and ceramic coating expertise. We treat every vehicle with the care and attention it deserves.</p>
+                    <p>Our mobile service means you never have to leave your beautiful lake setting to get premium detailing done.</p>
+                </div>
+                <div class="about-features">
+                    <div class="feature-item">Fully Mobile & Equipped</div>
+                    <div class="feature-item">Lake Area Specialists</div>
+                    <div class="feature-item">Marine Detailing Experts</div>
+                    <div class="feature-item">Ceramic Coating Certified</div>
+                    <div class="feature-item">Paint Correction Masters</div>
+                    <div class="feature-item">100% Satisfaction Guarantee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <h3>Swankies Elite Detailing</h3>
+                    <p>Premium mobile auto, boat, and motorcycle detailing services across Oklahoma and Arkansas lake communities. We bring professional-grade equipment and expertise directly to your location.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Google Reviews">⭐</a>
+                        <a href="#" class="social-link" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#areas">Service Areas</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#services">Mobile Auto Detailing</a></li>
+                        <li><a href="#services">Boat & Marine Detailing</a></li>
+                        <li><a href="#services">Motorcycle Detailing</a></li>
+                        <li><a href="#services">Paint Correction</a></li>
+                        <li><a href="#services">Ceramic Coating</a></li>
+                        <li><a href="#services">Window Tinting</a></li>
+                        <li><a href="#services">Boat Restoration</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><strong>Phone:</strong><br>
+                    <a href="tel:5551237926">(555) 123-SWAN</a></p>
+                    
+                    <p><strong>Email:</strong><br>
+                    <a href="mailto:info@swankieselite.com">info@swankieselite.com</a></p>
+                    
+                    <p><strong>Service Areas:</strong><br>
+                    Oklahoma & Arkansas Lakes<br>
+                    Mobile Service Available</p>
+                    
+                    <p><strong>Hours:</strong><br>
+                    Mon-Sat: 8AM-6PM<br>
+                    Sunday: By Appointment</p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Swankies Elite Detailing. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Booking Terms</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script>
+        // Mobile Menu Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileMenuClose = document.querySelector('.mobile-menu-close');
+            const navLinks = document.querySelector('.nav-links');
+            const overlay = document.querySelector('.mobile-menu-overlay');
+
+            function openMobileMenu() {
+                navLinks.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                navLinks.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            mobileMenuToggle?.addEventListener('click', openMobileMenu);
+            mobileMenuClose?.addEventListener('click', closeMobileMenu);
+            overlay?.addEventListener('click', closeMobileMenu);
+
+            // Close menu when clicking on nav links
+            const navLinkItems = document.querySelectorAll('.nav-links a');
+            navLinkItems.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.95) 100%)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Initialize Service Areas Map
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if map container exists
+            const mapContainer = document.getElementById('service-map');
+            if (!mapContainer) {
+                console.log('Map container not found');
+                return;
+            }
+
+            try {
+                // Initialize map centered on the service area
+                const map = L.map('service-map').setView([36.2, -94.8], 8);
+
+                // Add tile layer
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+
+                // Lake markers with service information
+                const lakeMarkers = [
+                    {
+                        coords: [36.85, -94.68],
+                        title: 'Lake Eucha, Oklahoma',
+                        towns: 'Jay • New Eucha • Kenwood • Siloam Springs • Tahlequah',
+                        services: 'Mobile car detailing, boat detailing, ceramic coating, paint correction'
+                    },
+                    {
+                        coords: [36.31, -95.31],
+                        title: 'Lake Hudson, Oklahoma', 
+                        towns: 'Pryor • Salina • Locust Grove • Strang • Sportsmen Acres',
+                        services: 'Mobile detailing, boat restoration, window tinting, marine ceramic coating'
+                    },
+                    {
+                        coords: [35.64, -94.87],
+                        title: 'Lake Tenkiller, Oklahoma',
+                        towns: 'Tahlequah • Gore • Vian • Park Hill • Cookson • Pettit',
+                        services: 'Boat detailing, hydrophobic coating, paint restoration, marine services'
+                    },
+                    {
+                        coords: [36.37, -93.85],
+                        title: 'Beaver Lake, Arkansas',
+                        towns: 'Eureka Springs • Rogers • Bentonville • Springdale • Beaver • Garfield',
+                        services: 'Elite detailing, ceramic coating, boat restoration, marine PPF services'
+                    }
+                ];
+
+                // Add markers to map
+                lakeMarkers.forEach(lake => {
+                    const popupContent = `
+                        <div style="color: #39ff14; font-weight: bold; font-size: 1.1rem; margin-bottom: 8px;">
+                            ${lake.title}
+                        </div>
+                        <div style="color: #000000; font-weight: 600; margin-bottom: 8px;">
+                            Towns: ${lake.towns}
+                        </div>
+                        <div style="color: #000000; font-size: 0.9rem;">
+                            Services: ${lake.services}
+                        </div>
+                    `;
+
+                    L.marker(lake.coords)
+                        .addTo(map)
+                        .bindPopup(popupContent, {
+                            maxWidth: 300
+                        });
+                });
+
+                console.log('Map initialized successfully');
+            } catch (error) {
+                console.error('Error initializing map:', error);
+                // Fallback - hide map container and show text message
+                mapContainer.innerHTML = '<p style="color: #ffffff; text-align: center; padding: 2rem;">Interactive map loading... Please refresh if it doesn\'t appear.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
