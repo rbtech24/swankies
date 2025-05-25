@@ -2,8 +2,8 @@ services:
   - type: web
     name: swankies-elite-detail
     env: node
-    buildCommand: npm ci
-    startCommand: ./deploy.sh
+    buildCommand: npm ci && npm run build
+    startCommand: node run-prod.js
     envVars:
       - key: NODE_ENV
         value: production
