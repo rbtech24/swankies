@@ -38,10 +38,10 @@ const Hero = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
-                href="#contact" 
+                href="/booking" 
                 className="bg-primary text-black font-bold py-4 px-8 rounded-full text-lg hover:shadow-neon-lg transition duration-300 transform hover:-translate-y-1 inline-block text-center"
               >
-                Book Now
+                Book Your Service
               </a>
               <a 
                 href="#services" 

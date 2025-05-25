@@ -4,7 +4,7 @@ import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
-import Contact from "@/components/Contact";
+import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
       <Gallery />
       <About />
       <Testimonials />
-      <Contact />
+      <FAQ />
       <Footer />
     </div>
   );
