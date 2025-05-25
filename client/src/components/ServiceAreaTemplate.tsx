@@ -61,12 +61,13 @@ const ServiceAreaTemplate: React.FC<ServiceAreaTemplateProps> = ({
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
                   href="/booking" 
+                  onClick={() => window.scrollTo(0, 0)}
                   className="bg-primary text-black font-bold py-3 px-8 rounded-full text-lg hover:shadow-neon-lg transition duration-300 transform hover:-translate-y-1 inline-block text-center"
                 >
                   Book Now
                 </a>
                 <a 
-                  href="tel:9188227188" 
+                  href="tel:+19188227188" 
                   className="bg-transparent border-2 border-white hover:border-primary text-white hover:text-primary font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:-translate-y-1 inline-block text-center"
                 >
                   Call (918) 822-7188
@@ -127,12 +128,15 @@ const ServiceAreaTemplate: React.FC<ServiceAreaTemplateProps> = ({
                   const stateSlug = state.toLowerCase();
                   
                   return (
-                    <Link key={index} href={`/service-areas/${citySlug}-${stateSlug}`}>
-                      <div className="bg-card/50 rounded-xl p-4 text-center border border-primary/20 hover:border-primary/60 transition-all cursor-pointer">
-                        <h3 className="font-bold text-xl text-white hover:text-primary transition-colors">{city}</h3>
-                        <p className="text-gray-400 text-sm mt-1">{state}</p>
-                      </div>
-                    </Link>
+                    <a 
+                      key={index} 
+                      href={`/service-areas/${citySlug}-${stateSlug}`} 
+                      onClick={() => window.scrollTo(0, 0)}
+                      className="bg-card/50 rounded-xl p-4 text-center border border-primary/20 hover:border-primary/60 transition-all cursor-pointer block"
+                    >
+                      <h3 className="font-bold text-xl text-white hover:text-primary transition-colors">{city}</h3>
+                      <p className="text-gray-400 text-sm mt-1">{state}</p>
+                    </a>
                   );
                 })}
               </div>
@@ -166,12 +170,13 @@ const ServiceAreaTemplate: React.FC<ServiceAreaTemplateProps> = ({
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <a 
                   href="/booking" 
+                  onClick={() => window.scrollTo(0, 0)}
                   className="bg-primary text-black font-bold py-3 px-8 rounded-full text-lg hover:shadow-neon-lg transition duration-300 transform hover:-translate-y-1 inline-block text-center"
                 >
                   Book Your Appointment
                 </a>
                 <a 
-                  href="tel:9188227188" 
+                  href="tel:+19188227188" 
                   className="bg-transparent border-2 border-white hover:border-primary text-white hover:text-primary font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:-translate-y-1 inline-block text-center"
                 >
                   Call (918) 822-7188
@@ -191,9 +196,9 @@ const ServiceAreaTemplate: React.FC<ServiceAreaTemplateProps> = ({
               We provide mobile detailing services throughout Northeast Oklahoma and Northwest Arkansas. Check out our other service areas below.
             </p>
             <div className="flex justify-center">
-              <Link href="/service-areas" className="bg-primary text-black font-bold py-3 px-8 rounded-full text-lg hover:shadow-neon-lg transition duration-300 transform hover:-translate-y-1 inline-block text-center">
+              <a href="/service-areas" onClick={() => window.scrollTo(0, 0)} className="bg-primary text-black font-bold py-3 px-8 rounded-full text-lg hover:shadow-neon-lg transition duration-300 transform hover:-translate-y-1 inline-block text-center">
                 View All Service Areas
-              </Link>
+              </a>
             </div>
           </div>
         </section>

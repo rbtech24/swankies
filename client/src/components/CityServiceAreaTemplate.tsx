@@ -166,13 +166,14 @@ const CityServiceAreaTemplate: React.FC<CityServiceAreaTemplateProps> = ({
                   <div className="space-y-4">
                     <a 
                       href="/booking" 
+                      onClick={() => window.scrollTo(0, 0)}
                       className="flex items-center justify-center bg-primary text-black font-bold py-3 px-6 rounded-full w-full hover:shadow-neon-sm transition duration-300"
                     >
                       Book Online
                     </a>
                     
                     <a 
-                      href="tel:9188227188" 
+                      href="tel:+19188227188" 
                       className="flex items-center justify-center bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-black font-bold py-3 px-6 rounded-full w-full transition duration-300"
                     >
                       <i className="fas fa-phone-alt mr-2"></i> (918) 822-7188
@@ -206,52 +207,40 @@ const CityServiceAreaTemplate: React.FC<CityServiceAreaTemplateProps> = ({
                   
                   <ul className="space-y-2">
                     <li>
-                      <Link href="/services/auto-detailing">
-                        <a className="flex items-center text-white hover:text-primary transition-colors">
-                          <span className="text-primary mr-2">▸</span> 
-                          Auto Detailing
-                        </a>
-                      </Link>
+                      <a href="/services/auto-detailing" onClick={() => window.scrollTo(0, 0)} className="flex items-center text-white hover:text-primary transition-colors">
+                        <span className="text-primary mr-2">▸</span> 
+                        Auto Detailing
+                      </a>
                     </li>
                     <li>
-                      <Link href="/services/boat-detailing">
-                        <a className="flex items-center text-white hover:text-primary transition-colors">
-                          <span className="text-primary mr-2">▸</span> 
-                          Boat Detailing
-                        </a>
-                      </Link>
+                      <a href="/services/boat-detailing" onClick={() => window.scrollTo(0, 0)} className="flex items-center text-white hover:text-primary transition-colors">
+                        <span className="text-primary mr-2">▸</span> 
+                        Boat Detailing
+                      </a>
                     </li>
                     <li>
-                      <Link href="/services/motorcycle-detailing">
-                        <a className="flex items-center text-white hover:text-primary transition-colors">
-                          <span className="text-primary mr-2">▸</span> 
-                          Motorcycle Detailing
-                        </a>
-                      </Link>
+                      <a href="/services/motorcycle-detailing" onClick={() => window.scrollTo(0, 0)} className="flex items-center text-white hover:text-primary transition-colors">
+                        <span className="text-primary mr-2">▸</span> 
+                        Motorcycle Detailing
+                      </a>
                     </li>
                     <li>
-                      <Link href="/services/paint-correction">
-                        <a className="flex items-center text-white hover:text-primary transition-colors">
-                          <span className="text-primary mr-2">▸</span> 
-                          Paint Correction
-                        </a>
-                      </Link>
+                      <a href="/services/paint-correction" onClick={() => window.scrollTo(0, 0)} className="flex items-center text-white hover:text-primary transition-colors">
+                        <span className="text-primary mr-2">▸</span> 
+                        Paint Correction
+                      </a>
                     </li>
                     <li>
-                      <Link href="/services/ceramic-coating">
-                        <a className="flex items-center text-white hover:text-primary transition-colors">
-                          <span className="text-primary mr-2">▸</span> 
-                          Ceramic Coating
-                        </a>
-                      </Link>
+                      <a href="/services/ceramic-coating" onClick={() => window.scrollTo(0, 0)} className="flex items-center text-white hover:text-primary transition-colors">
+                        <span className="text-primary mr-2">▸</span> 
+                        Ceramic Coating
+                      </a>
                     </li>
                     <li>
-                      <Link href="/services/interior-detailing">
-                        <a className="flex items-center text-white hover:text-primary transition-colors">
-                          <span className="text-primary mr-2">▸</span> 
-                          Interior Detailing
-                        </a>
-                      </Link>
+                      <a href="/services/interior-detailing" onClick={() => window.scrollTo(0, 0)} className="flex items-center text-white hover:text-primary transition-colors">
+                        <span className="text-primary mr-2">▸</span> 
+                        Interior Detailing
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -289,12 +278,13 @@ const CityServiceAreaTemplate: React.FC<CityServiceAreaTemplateProps> = ({
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a 
                 href="/booking" 
+                onClick={() => window.scrollTo(0, 0)}
                 className="bg-primary text-black font-bold py-3 px-8 rounded-full text-lg hover:shadow-neon-lg transition duration-300 transform hover:-translate-y-1 inline-block"
               >
                 Book Your Appointment
               </a>
               <a 
-                href="tel:9188227188" 
+                href="tel:+19188227188" 
                 className="bg-transparent border-2 border-white hover:border-primary text-white hover:text-primary font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:-translate-y-1 inline-block"
               >
                 Call (918) 822-7188
