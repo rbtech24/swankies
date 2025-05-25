@@ -66,6 +66,9 @@ function Router() {
       <Route path="/service-areas/salina-oklahoma" component={SalinaDetailingPage} />
       <Route path="/service-areas/miami-oklahoma" component={MiamiDetailingPage} />
       
+      {/* County service area routes */}
+      <Route path="/service-areas/county/:countyState" component={CountyServiceAreaTemplate} />
+      
       {/* Generic route for any other city-state combination */}
       <Route path="/service-areas/:cityState" component={GenericCityDetailingPage} />
       
