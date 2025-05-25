@@ -57,6 +57,7 @@ const Header = () => {
             <li><a href="/service-areas" className="nav-link text-white hover:text-primary transition duration-300">Service Areas</a></li>
             <li><a href="/about" className="nav-link text-white hover:text-primary transition duration-300">About Us</a></li>
             <li><a href="/testimonials" className="nav-link text-white hover:text-primary transition duration-300">Testimonials</a></li>
+            <li><a href="/booking" className="nav-link text-white hover:text-primary transition duration-300">Book Now</a></li>
             <li><a href="/contact" className="nav-link text-white hover:text-primary transition duration-300">Contact</a></li>
             <li>
               <a 
@@ -99,6 +100,7 @@ const Header = () => {
             <li><a href="/service-areas" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Service Areas</a></li>
             <li><a href="/about" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">About Us</a></li>
             <li><a href="/testimonials" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Testimonials</a></li>
+            <li><a href="/booking" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Book Now</a></li>
             <li><a href="/contact" onClick={closeMobileMenu} className="block py-2 text-white hover:text-primary transition duration-300 border-b border-gray-700">Contact</a></li>
             <li className="pt-4">
               <a 
