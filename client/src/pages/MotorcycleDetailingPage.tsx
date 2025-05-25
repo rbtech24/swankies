@@ -18,7 +18,7 @@ const MotorcycleDetailingPage = () => {
             </p>
             <div className="flex justify-center">
               <a 
-                href="/contact" 
+                href="/booking" 
                 className="bg-primary text-primary-foreground font-bold py-3 px-8 rounded-full text-lg hover:shadow-neon-lg transition duration-300 transform hover:-translate-y-1"
               >
                 Schedule Service
