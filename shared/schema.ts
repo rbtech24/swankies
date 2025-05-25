@@ -34,3 +34,28 @@ export const contactMessageSchema = createInsertSchema(contactMessages).omit({
 
 export type InsertContactMessage = z.infer<typeof contactMessageSchema>;
 export type ContactMessage = typeof contactMessages.$inferSelect;
+
+// Booking schema for appointment scheduling
+export const bookings = pgTable("bookings", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  phone: text("phone").notNull(),
+  serviceType: text("service_type").notNull(),
+  vehicleType: text("vehicle_type").notNull(),
+  date: text("date").notNull(), // Store as ISO date string
+  time: text("time").notNull(),
+  location: text("location").notNull(),
+  message: text("message"),
+  status: text("status").default("pending").notNull(), // pending, confirmed, completed, cancelled
+  createdAt: text("created_at").notNull().default("NOW()"),
+});
+
+export const bookingSchema = createInsertSchema(bookings).omit({
+  id: true,
+  status: true,
+  createdAt: true,
+});
+
+export type InsertBooking = z.infer<typeof bookingSchema>;
+export type Booking = typeof bookings.$inferSelect;
