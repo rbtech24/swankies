@@ -33,6 +33,9 @@ import SalinaDetailingPage from "@/pages/service-areas/cities/SalinaDetailingPag
 import MiamiDetailingPage from "@/pages/service-areas/cities/MiamiDetailingPage";
 import GenericCityDetailingPage from "@/pages/service-areas/cities/GenericCityDetailingPage";
 
+// County Service Area Pages
+import CountyServiceAreaTemplate from "@/pages/service-areas/county/CountyServiceAreaTemplate";
+
 function Router() {
   return (
     <Switch>

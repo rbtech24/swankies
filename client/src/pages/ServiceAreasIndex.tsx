@@ -208,11 +208,16 @@ const ServiceAreasIndex = () => {
                 Oklahoma <span className="text-primary text-shadow-neon">Counties</span> We Serve
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {oklahomaCounties.map((county, index) => (
-                  <div key={index} className="bg-black/30 rounded-lg p-3 text-center">
-                    <span className="text-white">{county}</span>
-                  </div>
-                ))}
+                {oklahomaCounties.map((county, index) => {
+                  const countySlug = county.toLowerCase().replace(/\s+/g, '-').replace(' county', '');
+                  return (
+                    <Link key={index} href={`/service-areas/county/${countySlug}-oklahoma`}>
+                      <div className="bg-black/30 rounded-lg p-3 text-center hover:bg-card/30 cursor-pointer transition-colors">
+                        <span className="text-white hover:text-primary transition-colors">{county}</span>
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -256,11 +261,16 @@ const ServiceAreasIndex = () => {
                 Arkansas <span className="text-primary text-shadow-neon">Counties</span> We Serve
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {arkansasCounties.map((county, index) => (
-                  <div key={index} className="bg-black/30 rounded-lg p-3 text-center">
-                    <span className="text-white">{county}</span>
-                  </div>
-                ))}
+                {arkansasCounties.map((county, index) => {
+                  const countySlug = county.toLowerCase().replace(/\s+/g, '-').replace(' county', '');
+                  return (
+                    <Link key={index} href={`/service-areas/county/${countySlug}-arkansas`}>
+                      <div className="bg-black/30 rounded-lg p-3 text-center hover:bg-card/30 cursor-pointer transition-colors">
+                        <span className="text-white hover:text-primary transition-colors">{county}</span>
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>
