@@ -31,6 +31,7 @@ import ClaremoreDetailingPage from "@/pages/service-areas/cities/ClaremoreDetail
 import JayDetailingPage from "@/pages/service-areas/cities/JayDetailingPage";
 import SalinaDetailingPage from "@/pages/service-areas/cities/SalinaDetailingPage";
 import MiamiDetailingPage from "@/pages/service-areas/cities/MiamiDetailingPage";
+import GenericCityDetailingPage from "@/pages/service-areas/cities/GenericCityDetailingPage";
 
 function Router() {
   return (
@@ -61,6 +62,9 @@ function Router() {
       <Route path="/service-areas/jay-oklahoma" component={JayDetailingPage} />
       <Route path="/service-areas/salina-oklahoma" component={SalinaDetailingPage} />
       <Route path="/service-areas/miami-oklahoma" component={MiamiDetailingPage} />
+      
+      {/* Generic route for any other city-state combination */}
+      <Route path="/service-areas/:cityState" component={GenericCityDetailingPage} />
       
       <Route component={NotFound} />
     </Switch>

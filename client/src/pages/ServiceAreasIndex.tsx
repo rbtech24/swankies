@@ -282,18 +282,11 @@ const ServiceAreasIndex = () => {
                 const state = isArkansas ? 'arkansas' : 'oklahoma';
                 const citySlug = city.toLowerCase().replace(/\s+/g, '-');
                 
-                // Check if we have created specific pages for these cities
-                const hasDetailPage = ['Grove', 'Tahlequah', 'Bentonville', 'Rogers', 'Claremore', 'Jay', 'Salina', 'Miami'].includes(city);
-                
                 return (
                   <div key={index} className="bg-card/30 rounded-lg p-3 text-center hover:bg-card/50 transition-colors">
-                    {hasDetailPage ? (
-                      <Link href={`/service-areas/${citySlug}-${state}`} className="text-white hover:text-primary transition-colors">
-                        {city}
-                      </Link>
-                    ) : (
-                      <span className="text-white">{city}</span>
-                    )}
+                    <Link href={`/service-areas/${citySlug}-${state}`} className="text-white hover:text-primary transition-colors">
+                      {city}
+                    </Link>
                   </div>
                 );
               })}
